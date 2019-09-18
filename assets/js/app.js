@@ -1,4 +1,4 @@
-var map, featureList, boroughSearch = [], naturetrailSearch = [], arboretumSearch = [];
+var map, featureList, boundarySearch = [], naturetrailSearch = [], arboretumSearch = [];
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -24,7 +24,7 @@ $("#about-btn").click(function() {
 });
 
 $("#full-extent-btn").click(function() {
-  map.fitBounds(boroughs.getBounds());
+  map.fitBounds(boundaries.getBounds());
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
@@ -138,7 +138,7 @@ var highlightStyle = {
   radius: 10
 };
 
-var boroughs = L.geoJson(null, {
+var boundaries = L.geoJson(null, {
   style: function (feature) {
     return {
       color: "black",
@@ -148,30 +148,30 @@ var boroughs = L.geoJson(null, {
     };
   },
   onEachFeature: function (feature, layer) {
-    boroughSearch.push({
+    boundarySearch.push({
       name: layer.feature.properties.BoroName,
-      source: "Boroughs",
+      source: "Boundaries",
       id: L.stamp(layer),
       bounds: layer.getBounds()
     });
   }
 });
-$.getJSON("data/boroughs.geojson", function (data) {
-  boroughs.addData(data);
+$.getJSON("data/boundaries.geojson", function (data) {
+  boundaries.addData(data);
 });
 
-//Create a color dictionary based off of subway route_id
-var subwayColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
+//Create a color dictionary based off of stream route_id
+var streamColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
     "5":"#009b2e", "6":"#009b2e", "7":"#ce06cb", "A":"#fd9a00", "C":"#fd9a00",
     "E":"#fd9a00", "SI":"#fd9a00","H":"#fd9a00", "Air":"#ffff00", "B":"#ffff00",
     "D":"#ffff00", "F":"#ffff00", "M":"#ffff00", "G":"#9ace00", "FS":"#6e6e6e",
     "GS":"#6e6e6e", "J":"#976900", "Z":"#976900", "L":"#969696", "N":"#ffff00",
     "Q":"#ffff00", "R":"#ffff00" };
 
-var subwayLines = L.geoJson(null, {
+var streamLines = L.geoJson(null, {
   style: function (feature) {
       return {
-        color: subwayColors[feature.properties.route_id],
+        color: streamColors[feature.properties.route_id],
         weight: 3,
         opacity: 1
       };
@@ -201,13 +201,13 @@ var subwayLines = L.geoJson(null, {
         }
       },
       mouseout: function (e) {
-        subwayLines.resetStyle(e.target);
+        streamLines.resetStyle(e.target);
       }
     });
   }
 });
-$.getJSON("data/subways.geojson", function (data) {
-  subwayLines.addData(data);
+$.getJSON("data/streams.geojson", function (data) {
+  streamLines.addData(data);
 });
 
 /* Single marker cluster layer to hold all clusters */
@@ -306,7 +306,7 @@ $.getJSON("data/Arboretum.geojson", function (data) {
 map = L.map("map", {
   zoom: 16,
   center: [-36.75250, 174.75665],
-  layers: [cartoLight, boroughs, markerClusters, highlight],
+  layers: [cartoLight, boundaries, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -419,8 +419,8 @@ var groupedOverlays = {
     "<img src='assets/img/tree.png' width='24' height='28'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
-    "Boroughs": boroughs,
-    "Subway Lines": subwayLines
+    "Pest Management Boundaries": boundaries,
+    "Streams": streamLines
   }
 };
 
@@ -512,7 +512,7 @@ $(document).one("ajaxStop", function () {
     },
     limit: 10
   });
-  boroughsBH.initialize();
+  boundariesBH.initialize();
   naturetrailBH.initialize();
   arboretumBH.initialize();
   geonamesBH.initialize();
@@ -523,11 +523,11 @@ $(document).one("ajaxStop", function () {
     highlight: true,
     hint: false
   }, {
-    name: "Boroughs",
+    name: "Boundaries",
     displayKey: "name",
-    source: boroughsBH.ttAdapter(),
+    source: boundariesBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'>Boroughs</h4>"
+      header: "<h4 class='typeahead-header'>Pest Management Boundaries</h4>"
     }
   }, {
     name: "Nature Trail",
@@ -553,7 +553,7 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
     }
   }).on("typeahead:selected", function (obj, datum) {
-    if (datum.source === "Boroughs") {
+    if (datum.source === "Boundaries") {
       map.fitBounds(datum.bounds);
     }
     if (datum.source === "Nature Trail") {
