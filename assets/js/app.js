@@ -1,4 +1,4 @@
-var map, featureList, boundarySearch = [], naturetrailSearch = [], arboretumSearch = [], nativeSearch = [];
+var map, featureList, boundarySearch = [], naturetrailSearch = [], arboretumSearch = [];
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -6,7 +6,7 @@ $(window).resize(function() {
 
 $(document).on("click", ".feature-row", function(e) {
   $(document).off("mouseout", ".feature-row", clearHighlight);
-  sidebarClick(parseInt($(this).attr("id"), 17));
+  sidebarClick(parseInt($(this).attr("id"), 10));
 });
 
 if ( !("ontouchstart" in window) ) {
@@ -107,15 +107,7 @@ function syncSidebar() {
       }
     }
   });
- /* Loop through native layer and add only features which are in the map bounds */
-  native.eachLayer(function (layer) {
-    if (map.hasLayer(nativeLayer)) {
-      if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/circle.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-      }
-    }
-  });  
-    /* Update list.js featureList */
+  /* Update list.js featureList */
   featureList = new List("features", {
     valueNames: ["feature-name"]
   });
@@ -252,7 +244,7 @@ var naturetrail = L.geoJson(null, {
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="30" height="30" src="assets/img/naturetrail.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="30" height="20" src="assets/img/naturetrail.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       naturetrailSearch.push({
         name: layer.feature.properties.NAME,
         address: layer.feature.properties.ADDRESS1,
@@ -311,48 +303,6 @@ $.getJSON("data/Arboretum.geojson", function (data) {
   arboretum.addData(data);
 });
 
-/* Empty layer placeholder to add to layer control for listening when to add/remove native to markerClusters layer */
-var nativeLayer = L.geoJson(null);
-var native = L.geoJson(null, {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, {
-      icon: L.icon({
-        iconUrl: "assets/img/circle.png",
-        iconSize: [24, 28],
-        iconAnchor: [12, 28],
-        popupAnchor: [0, -25]
-      }),
-      title: feature.properties.NAME,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function (feature, layer) {
-    if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Latin Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Common Name</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Notes</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-      layer.on({
-        click: function (e) {
-          $("#feature-title").html(feature.properties.NAME);
-          $("#feature-info").html(content);
-          $("#featureModal").modal("show");
-          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
-        }
-      });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/tree.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-      nativeSearch.push({
-        name: layer.feature.properties.NAME,
-        address: layer.feature.properties.ADRESS1,
-        source: "Native Trees",
-        id: L.stamp(layer),
-        lat: layer.feature.geometry.coordinates[1],
-        lng: layer.feature.geometry.coordinates[0]
-      });
-    }
-  }
-});
-$.getJSON("data/Native.geojson", function (data) {
-  native.addData(data);
-});
-
 map = L.map("map", {
   zoom: 16,
   center: [-36.75250, 174.75665],
@@ -371,10 +321,6 @@ map.on("overlayadd", function(e) {
     markerClusters.addLayer(arboretum);
     syncSidebar();
   }
-  if (e.layer === nativeLayer) {
-    markerClusters.addLayer(native);
-    syncSidebar();
-  }
 });
 
 map.on("overlayremove", function(e) {
@@ -384,10 +330,6 @@ map.on("overlayremove", function(e) {
   }
   if (e.layer === arboretumLayer) {
     markerClusters.removeLayer(arboretum);
-    syncSidebar();
-  }
-  if (e.layer === nativeLayer) {
-    markerClusters.removeLayer(native);
     syncSidebar();
   }
 });
@@ -474,8 +416,7 @@ var baseLayers = {
 var groupedOverlays = {
   "Points of Interest": {
     "<img src='assets/img/naturetrail.png' width='20' height='20'>&nbsp;Nature Trail": naturetrailLayer,
-    "<img src='assets/img/tree.png' width='24' height='28'>&nbsp;Arboretum": arboretumLayer,
-    "<img src='assets/img/circle.png' width='24' height='28'>&nbsp;Native Trees": nativeLayer
+    "<img src='assets/img/tree.png' width='24' height='28'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
     "Pest Management Boundaries": boundaries,
@@ -511,16 +452,16 @@ $(document).one("ajaxStop", function () {
   map.fitBounds(boroughs.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"});
-*/
-  var boundariesBH = new Bloodhound({
-    name: "Boundaries",
+
+  var boroughsBH = new Bloodhound({
+    name: "Boroughs",
     datumTokenizer: function (d) {
       return Bloodhound.tokenizers.whitespace(d.name);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: boundarySearch,
+    local: boroughSearch,
     limit: 10
-
+*/
   var naturetrailBH = new Bloodhound({
     name: "Nature Trail",
     datumTokenizer: function (d) {
@@ -538,16 +479,6 @@ $(document).one("ajaxStop", function () {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: arboretumSearch,
-    limit: 10
-  });
-  
-  var nativeBH = new Bloodhound({
-    name: "Native Trees",
-    datumTokenizer: function (d) {
-      return Bloodhound.tokenizers.whitespace(d.name);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: nativeSearch,
     limit: 10
   });
 
@@ -584,7 +515,6 @@ $(document).one("ajaxStop", function () {
   boundariesBH.initialize();
   naturetrailBH.initialize();
   arboretumBH.initialize();
-  nativeBH.initialize();
   geonamesBH.initialize();
 
   /* instantiate the typeahead UI */
@@ -616,14 +546,6 @@ $(document).one("ajaxStop", function () {
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
-    name: "Native Trees",
-    displayKey: "name",
-    source: nativeBH.ttAdapter(),
-    templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/circle.png' width='24' height='28'>&nbsp;Native Trees</h4>",
-      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
-    }
-  }, {
     name: "GeoNames",
     displayKey: "name",
     source: geonamesBH.ttAdapter(),
@@ -646,15 +568,6 @@ $(document).one("ajaxStop", function () {
     if (datum.source === "Arboretum") {
       if (!map.hasLayer(arboretumLayer)) {
         map.addLayer(arboretumLayer);
-      }
-      map.setView([datum.lat, datum.lng], 17);
-      if (map._layers[datum.id]) {
-        map._layers[datum.id].fire("click");
-      }
-    }
-     if (datum.source === "Native Trees") {
-      if (!map.hasLayer(nativeLayer)) {
-        map.addLayer(nativeLayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
