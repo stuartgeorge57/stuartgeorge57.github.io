@@ -103,7 +103,7 @@ function syncSidebar() {
   arboretum.eachLayer(function (layer) {
     if (map.hasLayer(arboretumLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/tree.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="20" height="20" src="assets/img/tree.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -268,9 +268,9 @@ var arboretum = L.geoJson(null, {
     return L.marker(latlng, {
       icon: L.icon({
         iconUrl: "assets/img/tree.png",
-        iconSize: [24, 28],
-        iconAnchor: [12, 28],
-        popupAnchor: [0, -25]
+        iconSize: [20, 20],
+        iconAnchor: [10, 20],
+        popupAnchor: [0, -20]
       }),
       title: feature.properties.NAME,
       riseOnHover: true
@@ -306,7 +306,7 @@ $.getJSON("data/Arboretum.geojson", function (data) {
 map = L.map("map", {
   zoom: 16,
   center: [-36.75250, 174.75665],
-  layers: [cartoLight, boundaries, markerClusters, highlight],
+  layers: [usgsImagery, boundaries, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -416,10 +416,10 @@ var baseLayers = {
 var groupedOverlays = {
   "Points of Interest": {
     "<img src='assets/img/naturetrail.png' width='20' height='20'>&nbsp;Nature Trail": naturetrailLayer,
-    "<img src='assets/img/tree.png' width='24' height='28'>&nbsp;Arboretum": arboretumLayer
+    "<img src='assets/img/tree.png' width='20' height='20'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
-    "Pest Management Boundaries": boundaries,
+    "Pest Zones": boundaries,
     "Streams": streamLines
   }
 };
@@ -527,7 +527,7 @@ $(document).one("ajaxStop", function () {
     displayKey: "name",
     source: boundariesBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'>Pest Management Boundaries</h4>"
+      header: "<h4 class='typeahead-header'>Pest Zones</h4>"
     }
   }, {
     name: "Nature Trail",
@@ -542,7 +542,7 @@ $(document).one("ajaxStop", function () {
     displayKey: "name",
     source: arboretumBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'><img src='assets/img/tree.png' width='24' height='28'>&nbsp;Arboretum</h4>",
+      header: "<h4 class='typeahead-header'><img src='assets/img/tree.png' width='20' height='20'>&nbsp;Arboretum</h4>",
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
