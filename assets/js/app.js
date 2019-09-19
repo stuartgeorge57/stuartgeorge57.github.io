@@ -511,16 +511,16 @@ $(document).one("ajaxStop", function () {
   map.fitBounds(boroughs.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"});
-
-  var boroughsBH = new Bloodhound({
-    name: "Boroughs",
+*/
+  var boundariesBH = new Bloodhound({
+    name: "Boundaries",
     datumTokenizer: function (d) {
       return Bloodhound.tokenizers.whitespace(d.name);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: boroughSearch,
+    local: boundarySearch,
     limit: 10
-*/
+
   var naturetrailBH = new Bloodhound({
     name: "Nature Trail",
     datumTokenizer: function (d) {
@@ -541,7 +541,7 @@ $(document).one("ajaxStop", function () {
     limit: 10
   });
   
-  var natureBH = new Bloodhound({
+  var nativeBH = new Bloodhound({
     name: "Native Trees",
     datumTokenizer: function (d) {
       return Bloodhound.tokenizers.whitespace(d.name);
