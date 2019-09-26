@@ -64,7 +64,7 @@
 ,
 { "type": "Feature", "id": 30, "properties": { "NAME": "30", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75629, -36.75212 ] } }
 ,
-{ "type": "Feature", "id": 31, "properties": { "NAME": "31. Olearia rani", "TEL": "Heketara", "URL": "https://cbusnz.files.wordpress.com/2008/06/olearia-rani-1.jpg?w=600&h=450", "ADDRESS1": "The small tree with beautifully patterned veining of the leaves is Olearia rani or heketara. It will have numerous heads of daisy flowers in time." }, "geometry": {"type": "Point", "coordinates": [ 174.75668, -36.75212 ] } }
+{ "type": "Feature", "id": 31, "properties": { "NAME": "31. Olearia rani", "TEL": "Heketara", "URL": "https://cbusnz.files.wordpress.com/2008/06/olearia-rani-1.jpg?w=600&h=450", "ADDRESS1": "The small tree with beautifully patterned veining of the leaves is Olearia rani or heketara. It will have numerous heads of daisy flowers in time." }, "geometry": {"type": "Point", "coordinates": [ 174.75620, -36.75212 ] } }
 ,
 { "type": "Feature", "id": 32, "properties": { "NAME": "32", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75510, -36.75205 ] } }
 ,
