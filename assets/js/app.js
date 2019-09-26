@@ -118,16 +118,19 @@ function syncSidebar() {
 
 /* Basemap Layers */
 var cartoLight = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
-  maxZoom: 26,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+	maxZoom: 26,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+	});
+
+var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a 	href="https://www.mapbox.com/">Mapbox</a>',
+	mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3R1YXJ0Z2VvcmdlNTciLCJhIjoiY2p5bzNzamw3MHM3aDNvbzg0d2c3eWtiZSJ9.4zD4tx1DwAOgJm1DC4LbrQ';
+	
+var Mapbox = L.tileLayer(mbUrl, {id: 'mapbox.satellite',maxZoom: 26, attribution: mbAttr});
+
+var LINZTopo50 = L.tileLayer("http://tiles-a.data-cdn.linz.govt.nz/services;key=76ffc8bd4413458182f8e59005710c94/tiles/v4/layer=51769/EPSG:3857/{z}/{x}/{y}.png",  {
+	maxZoom: 26,
+	attribution: 'CC BY 4.0 Land Information New Zealand'
 });
-
-var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3R1YXJ0Z2VvcmdlNTciLCJhIjoiY2p5bzNzamw3MHM3aDNvbzg0d2c3eWtiZSJ9.4zD4tx1DwAOgJm1DC4LbrQ';
-var usgsImagery = L.tileLayer(mbUrl, {id: 'mapbox.satellite',maxZoom: 26, attribution: mbAttr});
-
 
 /* Overlay Layers */
 var highlight = L.geoJson(null);
@@ -135,22 +138,22 @@ var highlightStyle = {
   stroke: false,
   fillColor: "#00FFFF",
   fillOpacity: 0.7,
-  radius: 10
+  radius: 20
 };
 
 var boundaries = L.geoJson(null, {
   style: function (feature) {
     return {
-      color: "black",
-      fill: false,
-      opacity: 1,
+      color: "#ff3135",
+      fill: true,
+      opacity: 0.2,
       clickable: false
     };
   },
   onEachFeature: function (feature, layer) {
     boundarySearch.push({
       name: layer.feature.properties.BoroName,
-      source: "Boundaries",
+      source: "Eco Zones",
       id: L.stamp(layer),
       bounds: layer.getBounds()
     });
@@ -226,8 +229,8 @@ var naturetrail = L.geoJson(null, {
       icon: L.icon({
         iconUrl: "assets/img/naturetrail.png",
         iconSize: [20, 20],
-        iconAnchor: [10, 0],
-        popupAnchor: [0, 0]
+        iconAnchor: [10, 10],
+        popupAnchor: [10, 10]
       }),
       title: feature.properties.NAME,
       riseOnHover: true
@@ -256,9 +259,9 @@ var naturetrail = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/Nature Trail.geojson", function (data) {
+$.getJSON("data/NatureTrail.geojson", function (data) {
   naturetrail.addData(data);
-  map.addLayer(naturetrailLayer);
+/*  map.addLayer(naturetrailLayer); */
 });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove arboretum to markerClusters layer */
@@ -269,8 +272,8 @@ var arboretum = L.geoJson(null, {
       icon: L.icon({
         iconUrl: "assets/img/tree.png",
         iconSize: [20, 20],
-        iconAnchor: [10, 20],
-        popupAnchor: [0, -20]
+        iconAnchor: [10, 10],
+        popupAnchor: [10, 10]
       }),
       title: feature.properties.NAME,
       riseOnHover: true
@@ -306,7 +309,7 @@ $.getJSON("data/Arboretum.geojson", function (data) {
 map = L.map("map", {
   zoom: 16,
   center: [-36.75250, 174.75665],
-  layers: [usgsImagery, boundaries, markerClusters, highlight],
+  layers: [Mapbox, boundaries, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -360,7 +363,7 @@ var attributionControl = L.control({
 });
 attributionControl.onAdd = function (map) {
   var div = L.DomUtil.create("div", "leaflet-control-attribution");
-  div.innerHTML = "<span class='hidden-xs'>Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
+  div.innerHTML = "<span class='hidden-xs'>Developed by CPBS</a> | </span><a href='#' onclick='$(\"#attributionModal\").modal(\"show\"); return false;'>Attribution</a>";
   return div;
 };
 map.addControl(attributionControl);
@@ -410,7 +413,8 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
   "Street Map": cartoLight,
-  "Aerial Imagery": usgsImagery
+  "LINZ": LINZTopo50,
+  "Aerial Imagery": Mapbox
 };
 
 var groupedOverlays = {
@@ -419,7 +423,7 @@ var groupedOverlays = {
     "<img src='assets/img/tree.png' width='20' height='20'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
-    "Pest Zones": boundaries,
+    "Eco Zones": boundaries,
     "Streams": streamLines
   }
 };
@@ -448,11 +452,12 @@ $("#featureModal").on("hidden.bs.modal", function (e) {
 $(document).one("ajaxStop", function () {
   $("#loading").hide();
   sizeLayerControl();
-  /* Fit map to boroughs bounds
-  map.fitBounds(boroughs.getBounds());
+  /* Fit map to boundary bounds */
+  map.fitBounds(boundaries.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
-  featureList.sort("feature-name", {order:"asc"});
+  featureList.sort("feature-name", {order:"asc"}); 
 
+ /*
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
     datumTokenizer: function (d) {
@@ -523,11 +528,11 @@ $(document).one("ajaxStop", function () {
     highlight: true,
     hint: false
   }, {
-    name: "Boundaries",
+    name: "Eco Zones",
     displayKey: "name",
     source: boundariesBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'>Pest Zones</h4>"
+      header: "<h4 class='typeahead-header'>Eco Zones</h4>"
     }
   }, {
     name: "Nature Trail",
@@ -553,7 +558,7 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
     }
   }).on("typeahead:selected", function (obj, datum) {
-    if (datum.source === "Boundaries") {
+    if (datum.source === "Eco Zones") {
       map.fitBounds(datum.bounds);
     }
     if (datum.source === "Nature Trail") {

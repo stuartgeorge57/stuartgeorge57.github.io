@@ -1,0 +1,108 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "NAME": "Nature Trail Start", "TEL": "", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0133-rimu.jpg?w=600&h=450", "ADDRESS1": "" }, "geometry": { "type": "Point", "coordinates": [ 174.75964, -36.75060 ] } }  
+,
+{ "type": "Feature", "id": 1, "properties": { "NAME": "1. Dacrydium cupressinum", "TEL": "Rimu", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0133-rimu.jpg?w=600&h=450", "ADDRESS1": "You are surrounded by the most common tree fern in the park – the silver fern (Cyathea dealbata)- recognised by the silver stipes (stems) and silver underside of the fronds. It can grow to 10m and is one of New Zealand’s national emblems.  The track has been moved out of the stream bed due to silt from erosion. Flooding is common in the stream due to rainwater run-off from the housing development on the surrounding ridges. Cyathea dealbata, silver fern. Look up and across the stream and you will see an emergent rimu (Dacrydium cupressinum) with its graceful drooping leaves." }, "geometry": {"type": "Point", "coordinates": [ 174.75946, -36.75064 ] } }
+,
+{ "type": "Feature", "id": 2, "properties": { "NAME": "2. Melicytus ramiflorus", "TEL": "Mahoe or Whiteywood", "URL": "https://cbusnz.files.wordpress.com/2008/06/melicytus-ramiflorus-whitey-wood-mahoe-imgp0064-small.jpg?w=600&h=450", "ADDRESS1": "This grove of trees is mahoe or whiteywood (Melicytus ramiflorus) – there are many around here. Note white-patterned trunk, fine-toothed leaves, and flowers (early summer) sprouting directly from quite thick branches. Hounds tongue fern (microsorum pustulatum) uses the trunk to reach the light." }, "geometry": {"type": "Point", "coordinates": [ 174.75940, -36.75065 ] } }
+,
+{ "type": "Feature", "id": 3, "properties": { "NAME": "3. Myrsine australis", "TEL": "Mapou or Red matipo", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0028-myrsine-australis-mapou.jpg?w=600&h=450", "ADDRESS1": "Mapou or red matipo (Myrsine australis) with small wavy leaves with red blotches, with reddish stems." }, "geometry": {"type": "Point", "coordinates": [ 174.75933, -36.75067 ] } }
+,
+{ "type": "Feature", "id": 4, "properties": { "NAME": "4. Dacrycarpus dacrydioides + Hedycarya arborea", "TEL": "Kahikatea + Pidgeonwood or Porpkaiwhiri", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0051-kahikatea-juvenile.jpg?w=600&h=450", "ADDRESS1": "Tall straight kahikatea (Dacrycarpus dacrydioides), with threadlike leaves will eventually grow up to 40m tall. Opposite are young pigeonwood or porokaiwhiri (Hedycarya arborea), with dark glossy leaves and blackish stems. Compare with young mahoe with lighter green thinner leaves and silver stems." }, "geometry": {"type": "Point", "coordinates": [ 174.75925, -36.75076 ] } }
+,
+{ "type": "Feature", "id": 5, "properties": { "NAME": "5. Ripogonum scandens + Asplenium oblongifolium", "TEL": "Supplejack + Shining spleenwort ", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0025-supplejack.jpg?w=600&h=450", "ADDRESS1": "The tangle of vines is supplejack (Ripogonum scandens).On the opposite bank, five metres on the right, is the glossy fern Asplenium oblongifolium." }, "geometry": {"type": "Point", "coordinates": [ 174.75909, -36.75071 ] } }
+,
+{ "type": "Feature", "id": 6, "properties": { "NAME": "6. Geniostoma ligustrifolium", "TEL": "Hangehange", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0079-hangehange.jpg?w=600&h=450", "ADDRESS1": "Hangehange (Geniostoma ligustrifolium) is one of the more common native trees. Its thin pale green leaves droop in the summer heat" }, "geometry": {"type": "Point", "coordinates": [ 174.75895, -36.75073 ] } }
+,
+{ "type": "Feature", "id": 7, "properties": { "NAME": "7. Coprosma rhamnoides + Cyathodes juniperina", "TEL": "Mingimingi", "URL": "https://cbusnz.files.wordpress.com/2008/06/leptocophylla-juniperina-prickly-mingimingi-005.jpg", "ADDRESS1": "Small-leafed shrubs are the divaricating coprosma (Coprosma rhamnoides). On the opposite side of the track is the prickly mingimingi (Cyathodes juniperina). Opposite the mingimingi the tall tree is kumarahou (Pomaderris kumeraho) with rough wrinkly leaves." }, "geometry": {"type": "Point", "coordinates": [ 174.75987, -36.75078 ] } }
+,
+{ "type": "Feature", "id": 8, "properties": { "NAME": "8. Phyllocladus trichomanoides", "TEL": "Tanekaha or Celery pine", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0035-tanekaha.jpg", "ADDRESS1": "Tanekaha or celery pine (Phyllocladus trichomanoides), a familiar tree in the park and one of the most beautiful, especially in the young stage. The small grasses (sedges) with grooved leaves are Carex dissita and C. lambertiana (distinguishable by their flowers in early summer)." }, "geometry": {"type": "Point", "coordinates": [ 174.75879, -36.75083 ] } }
+,
+{ "type": "Feature", "id": 9, "properties": { "NAME": "9. Leptospermum scoparium", "TEL": "Manuka", "URL": "https://cbusnz.files.wordpress.com/2008/06/1008-manuka.jpg", "ADDRESS1": "Manuka (Leptospermum scoparium), have grown here in a light well. They are becoming less common in this maturing bush. Many large manuka have now died – large trunks are rotting and providing nourishment for the next cycle." }, "geometry": {"type": "Point", "coordinates": [ 174.75858, -36.75085 ] } }
+,
+{ "type": "Feature", "id": 10, "properties": { "NAME": "10. Carex dissita", "TEL": "Carex", "URL": "https://cbusnz.files.wordpress.com/2008/06/gahnia-lacera.jpg?w=600&h=450", "ADDRESS1": "The small sedge on the left is Carex dissita. The taller sedge is a native cutty grass Gahnia lacera under a small mahoe and mapou." }, "geometry": {"type": "Point", "coordinates": [ 174.75853, -36.75092 ] } }
+,
+{ "type": "Feature", "id": 11, "properties": { "NAME": "11. Dacrycarpus dacrydioides", "TEL": "Kahikatea or White pine", "URL": "https://images.app.goo.gl/Twb5cAsUDuY5QikQ8", "ADDRESS1": "Grove of kahikatea or white pine (Dacrycarpus dacrydioides) – juvenile form with feathery leaves and many young adults acquiring threadlike leaves." }, "geometry": {"type": "Point", "coordinates": [ 174.75850, -36.75102 ] } }
+,
+{ "type": "Feature", "id": 12, "properties": { "NAME": "12. Hedycarya arborea", "TEL": "Pigeonwood or Poporokaiwhiri ", "URL": "https://g.co/kgs/p9MMKA", "ADDRESS1": "To the left of the bridge, the large pigeonwood is a female, with numerous vertical black epicormic shoots, growing from the trunk of the tree. Note the evidence of serious upstream erosion here, a result of loss of vegetation and development in the upper catchment." }, "geometry": {"type": "Point", "coordinates": [ 174.75852, -36.75102 ] } }
+,
+{ "type": "Feature", "id": 13, "properties": { "NAME": "13. Dacrycarpus dacrydioides", "TEL": "Kahikatea", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0055-kahikatea.jpg", "ADDRESS1": "Kahikatea adult form but more branching than characteristic of the genus. It is thought to be more than 150 years old, and to have grown in a more open environment with little competition. Fortunately, this is a female kahikatea, hence the great number of younger ones growing throughout the park. The ladder fern, opposite, is Doodia australis, a common ground fern. New fronds have a pink colouring.  More Gahnia lacera." }, "geometry": {"type": "Point", "coordinates": [ 174.75852, -36.75105 ] } }
+,
+{ "type": "Feature", "id": 14, "properties": { "NAME": "14. Blechnum novae-zelandiae + Pneumatopteris pennigera", "TEL": "Kiokio + Lady-fern or gully fern", "URL": "https://cbusnz.files.wordpress.com/2008/06/p1000951-blechnum-nz.jpg", "ADDRESS1": "The ferns are Blechnum novae-zelandiae, kiokio, large fronds with wavy segments. Lady-fern or gully fern (Pneumatopteris pennigera) with toothed segments is nearer the stream. From the bridge the giant sedge upstream is Gahnia xanthocarpa." }, "geometry": {"type": "Point", "coordinates": [ 174.75843, -36.75113 ] } }
+,
+{ "type": "Feature", "id": 15, "properties": { "NAME": "15. Freycinetia baueriana ssp. banksii", "TEL": "Kiekie", "URL": "https://cbusnz.files.wordpress.com/2008/06/imgp0068-keikie-climbing-kahikatea.jpg?w=600&h=450", "ADDRESS1": " In the background covering the stream bed is a mass of kiekie (Freycinetia baueriana ssp. banksii) – a scrambler with dark green long narrow leaves, and interesting arum-like flowers in late spring. Closely related to the tropical pandanus, it is said to flower only every 5 or 10 years." }, "geometry": {"type": "Point", "coordinates": [ 174.75820, -36.75132 ] } }
+,
+{ "type": "Feature", "id": 16, "properties": { "NAME": "16. Dacrycarpus dacrydioides", "TEL": "Juvenile kahikatea", "URL": "", "ADDRESS1": "Juvenile kahikatea in abundance here as well as the small round leaved Coprosma rhamnoides" }, "geometry": {"type": "Point", "coordinates": [ 174.75797, -36.75132 ] } }
+,
+{ "type": "Feature", "id": 17, "properties": { "NAME": "17. Freycinetia baueriana ssp. banksii", "TEL": "Kiekie", "URL": "", "ADDRESS1": "Look across the stream to conical shaped emergent kahikatea, tanekaha on the ridge and kiekie." }, "geometry": {"type": "Point", "coordinates": [ 174.75788, -36.75141 ] } }
+,
+{ "type": "Feature", "id": 18, "properties": { "NAME": "18. Pseudopanax lessonii", "TEL": "Houpara", "URL": "https://g.co/kgs/ERmyyg", "ADDRESS1": "The large overhanging tree with long leathery leaves is houpara (Pseudopanax lessonii)." }, "geometry": {"type": "Point", "coordinates": [ 174.75768, -36.75155 ] } }
+,
+{ "type": "Feature", "id": 19, "properties": { "NAME": "19. Coprosma lucida", "TEL": "Karamū", "URL": "https://cbusnz.files.wordpress.com/2008/06/coprosma-lucida-leathery-imgp0078.jpg?w=600&h=450", "ADDRESS1": "The track deviation is again due to flooding. Here we have Coprosma lucida, a leathery leaved plant with a raised mid rib on the top of the leaf. Tanekaha can be seen on the ridge uphill of the track." }, "geometry": {"type": "Point", "coordinates": [ 174.75747, -36.75168 ] } }
+,
+{ "type": "Feature", "id": 20, "properties": { "NAME": "20. Pittosporum tenuifolium", "TEL": "Kohuhu", "URL": "https://g.co/kgs/3vsyvc", "ADDRESS1": "Two metres to the right of the peg this small tree is kohuhu (Pittosporum tenuifolium) with small leaves." }, "geometry": {"type": "Point", "coordinates": [ 174.75735, -36.75173 ] } }
+,
+{ "type": "Feature", "id": 21, "properties": { "NAME": "21", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75730, -36.75175 ] } }
+,
+{ "type": "Feature", "id": 22, "properties": { "NAME": "22", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75718, -36.75180 ] } }
+,
+{ "type": "Feature", "id": 23, "properties": { "NAME": "23", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75711, -36.75183 ] } }
+,
+{ "type": "Feature", "id": 24, "properties": { "NAME": "24", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75692, -36.75197 ] } }
+,
+{ "type": "Feature", "id": 25, "properties": { "NAME": "25", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75692, -36.75197 ] } }
+,
+{ "type": "Feature", "id": 26, "properties": { "NAME": "26", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75668, -36.75205 ] } }
+,
+{ "type": "Feature", "id": 27, "properties": { "NAME": "27", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75668, -36.75209 ] } }
+,
+{ "type": "Feature", "id": 28, "properties": { "NAME": "28", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75655, -36.75213 ] } }
+,
+{ "type": "Feature", "id": 29, "properties": { "NAME": "29", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75640, -36.75212 ] } }
+,
+{ "type": "Feature", "id": 30, "properties": { "NAME": "30", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75629, -36.75212 ] } }
+,
+{ "type": "Feature", "id": 31, "properties": { "NAME": "31. Olearia rani", "TEL": "Heketara", "URL": "https://cbusnz.files.wordpress.com/2008/06/olearia-rani-1.jpg?w=600&h=450", "ADDRESS1": "The small tree with beautifully patterned veining of the leaves is Olearia rani or heketara. It will have numerous heads of daisy flowers in time." }, "geometry": {"type": "Point", "coordinates": [ 174.75668, -36.75212 ] } }
+,
+{ "type": "Feature", "id": 32, "properties": { "NAME": "32", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75510, -36.75205 ] } }
+,
+{ "type": "Feature", "id": 33, "properties": { "NAME": "33", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75510, -36.75205 ] } }
+,
+{ "type": "Feature", "id": 34, "properties": { "NAME": "34", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75503, -36.75195 ] } }
+,
+{ "type": "Feature", "id": 35, "properties": { "NAME": "35", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75503, -36.75195 ] } }
+,
+{ "type": "Feature", "id": 36, "properties": { "NAME": "36", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75511, -36.75186 ] } }
+,
+{ "type": "Feature", "id": 37, "properties": { "NAME": "37", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75533, -36.75147 ] } }
+,
+{ "type": "Feature", "id": 38, "properties": { "NAME": "38", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75567, -36.75097 ] } }
+,
+{ "type": "Feature", "id": 39, "properties": { "NAME": "39", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75567, -36.75097 ] } }
+,
+{ "type": "Feature", "id": 40, "properties": { "NAME": "40", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75718, -36.75180 ] } }
+,
+{ "type": "Feature", "id": 41, "properties": { "NAME": "41", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75612, -36.75059 ] } }
+,
+{ "type": "Feature", "id": 42, "properties": { "NAME": "42", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75641, -36.75067 ] } }
+,
+{ "type": "Feature", "id": 43, "properties": { "NAME": "43", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75641, -36.75067 ] } }
+,
+{ "type": "Feature", "id": 44, "properties": { "NAME": "44", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75723, -36.75052 ] } }
+,
+{ "type": "Feature", "id": 45, "properties": { "NAME": "45", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75753, -36.75033 ] } }
+,
+{ "type": "Feature", "id": 46, "properties": { "NAME": "46", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75767, -36.75032 ] } }
+,
+{ "type": "Feature", "id": 47, "properties": { "NAME": "47", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75800, -36.75038 ] } }
+,
+{ "type": "Feature", "id": 48, "properties": { "NAME": "48", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75889, -36.75025 ] } }
+,
+{ "type": "Feature", "id": 49, "properties": { "NAME": "49", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75909, -36.75040 ] } }
+,
+{ "type": "Feature", "id": 50, "properties": { "NAME": "50", "TEL": "", "URL": "", "ADDRESS1": "" }, "geometry": {"type": "Point", "coordinates": [ 174.75909, -36.75040 ] } }
+
+]
+}
