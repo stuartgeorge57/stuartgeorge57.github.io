@@ -147,7 +147,7 @@ var boundaries = L.geoJson(null, {
       color: "#ff3135",
       fill: true,
       opacity: 0.2,
-      clickable: false
+      clickable: true
     };
   },
   onEachFeature: function (feature, layer) {
