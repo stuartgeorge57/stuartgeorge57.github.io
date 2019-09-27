@@ -145,7 +145,7 @@ var boundaries = L.geoJson(null, {
   style: function (feature) {
     return {
       color: "#ff3135",
-      fill: true,
+      fill: false,
       opacity: 0.2,
       clickable: true
     };
@@ -452,12 +452,12 @@ $("#featureModal").on("hidden.bs.modal", function (e) {
 $(document).one("ajaxStop", function () {
   $("#loading").hide();
   sizeLayerControl();
-  /* Fit map to boundary bounds */
+  /* Fit map to boundary bounds 
   map.fitBounds(boundaries.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"}); 
 
- /*
+ 
   var boroughsBH = new Bloodhound({
     name: "Boroughs",
     datumTokenizer: function (d) {
