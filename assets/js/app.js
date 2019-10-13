@@ -314,6 +314,7 @@ map = L.map("map", {
   attributionControl: false
 });
 
+
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
   if (e.layer === naturetrailLayer) {
