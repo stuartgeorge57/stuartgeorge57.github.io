@@ -163,6 +163,8 @@ $.getJSON("data/boundaries.geojson", function (data) {
   boundaries.addData(data);
 });
 
+
+
 //Create a color dictionary based off of stream route_id
 var streamColors = {"1":"#ff3135", "2":"#ff3135", "3":"ff3135", "4":"#009b2e",
     "5":"#009b2e", "6":"#009b2e", "7":"#ce06cb", "A":"#fd9a00", "C":"#fd9a00",
