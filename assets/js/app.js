@@ -163,6 +163,9 @@ $.getJSON("data/boundaries.geojson", function (data) {
   boundaries.addData(data);
 });
 
+/*var labelLocation = new L.LatLng(174.751950, -36.745959);
+    var labelTitle = new L.LabelOverlay(labelLocation, '<b>GERMANY</b>');
+    map.addLayer(labelTitle);*/
 
 
 //Create a color dictionary based off of stream route_id
@@ -220,7 +223,7 @@ var markerClusters = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: true,
   showCoverageOnHover: false,
   zoomToBoundsOnClick: true,
-  disableClusteringAtZoom: 16
+  disableClusteringAtZoom: 20
 });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove naturetrail to markerClusters layer */
