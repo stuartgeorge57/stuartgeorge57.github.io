@@ -163,9 +163,7 @@ $.getJSON("data/boundaries.geojson", function (data) {
   boundaries.addData(data);
 });
 
-/*var labelLocation = new L.LatLng(174.751950, -36.745959);
-    var labelTitle = new L.LabelOverlay(labelLocation, '<b>GERMANY</b>');
-    map.addLayer(labelTitle);*/
+
 
 
 //Create a color dictionary based off of stream route_id
@@ -319,6 +317,10 @@ map = L.map("map", {
   attributionControl: false
 });
 
+/* add labels  
+var labelLocation = new L.LatLng(174.751950, -36.745959);
+    var labelTitle = new L.LabelOverlay(labelLocation, '<b>GERMANY</b>');
+    map.addLayer(labelTitle); */
 
 /* Layer control listeners that allow for a single markerClusters layer */
 map.on("overlayadd", function(e) {
