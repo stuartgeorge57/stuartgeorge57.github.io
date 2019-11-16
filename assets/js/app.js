@@ -384,7 +384,7 @@ var zoomControl = L.control.zoom({
 var locateControl = L.control.locate({
   position: "bottomright",
   drawCircle: true,
-  follow: true,
+  follow: false,
   setView: true,
   keepCurrentZoomLevel: true,
   markerStyle: {
@@ -482,7 +482,7 @@ $(document).one("ajaxStop", function () {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: naturetrailSearch,
-    limit: 10
+    limit: 26
   });
 
   var arboretumBH = new Bloodhound({
@@ -492,7 +492,7 @@ $(document).one("ajaxStop", function () {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: arboretumSearch,
-    limit: 10
+    limit: 26
   });
 
   var geonamesBH = new Bloodhound({
@@ -523,7 +523,7 @@ $(document).one("ajaxStop", function () {
         }
       }
     },
-    limit: 10
+    limit: 26
   });
   boundariesBH.initialize();
   naturetrailBH.initialize();
@@ -573,7 +573,7 @@ $(document).one("ajaxStop", function () {
       if (!map.hasLayer(naturetrailLayer)) {
         map.addLayer(naturetrailLayer);
       }
-      map.setView([datum.lat, datum.lng], 17);
+      map.setView([datum.lat, datum.lng], 26);
       if (map._layers[datum.id]) {
         map._layers[datum.id].fire("click");
       }
@@ -582,13 +582,13 @@ $(document).one("ajaxStop", function () {
       if (!map.hasLayer(arboretumLayer)) {
         map.addLayer(arboretumLayer);
       }
-      map.setView([datum.lat, datum.lng], 17);
+      map.setView([datum.lat, datum.lng], 26);
       if (map._layers[datum.id]) {
         map._layers[datum.id].fire("click");
       }
     }
     if (datum.source === "GeoNames") {
-      map.setView([datum.lat, datum.lng], 14);
+      map.setView([datum.lat, datum.lng], 26);
     }
     if ($(".navbar-collapse").height() > 50) {
       $(".navbar-collapse").collapse("hide");
