@@ -127,7 +127,7 @@ var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStree
 	
 var Mapbox = L.tileLayer(mbUrl, {id: 'mapbox.satellite',maxZoom: 26, attribution: mbAttr});
 
-var LINZTopo50 = L.tileLayer("http://tiles-a.data-cdn.linz.govt.nz/services;key=76ffc8bd4413458182f8e59005710c94/tiles/v4/layer=51769/EPSG:3857/{z}/{x}/{y}.png",  {
+var LINZTopo50 = L.tileLayer("http://tiles-a.data-cdn.linz.govt.nz/services;key=76ffc8bd4413458182f8e59005710c94/tiles/v4/layer=95497/EPSG:3857/{z}/{x}/{y}.png",  {
 	maxZoom: 26,
 	attribution: 'CC BY 4.0 Land Information New Zealand'
 });
@@ -421,8 +421,8 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
   "Street Map": cartoLight,
-  "LINZ": LINZTopo50,
-  "Aerial Imagery": Mapbox
+  "LINZ 2017": LINZTopo50,
+  "Mapbox 2010?": Mapbox
 };
 
 var groupedOverlays = {
