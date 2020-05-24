@@ -153,7 +153,7 @@ var Park_Extent = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     boundarySearch.push({
       name: layer.feature.properties.BoroName,
-      source: "Eco Zones",
+      source: "Park Extents",
       id: L.stamp(layer),
       bounds: layer.getBounds()
     });
@@ -431,7 +431,7 @@ var groupedOverlays = {
     "<img src='assets/img/tree.png' width='20' height='20'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
-    "Eco Zones": Park_Extent,
+    "Park Extents": Park_Extent,
     "Streams": streamLines
   }
 };
@@ -536,11 +536,11 @@ $(document).one("ajaxStop", function () {
     highlight: true,
     hint: false
   }, {
-    name: "Eco Zones",
+    name: "Park Extents",
     displayKey: "name",
     source: Park_ExtentBH.ttAdapter(),
     templates: {
-      header: "<h4 class='typeahead-header'>Eco Zones</h4>"
+      header: "<h4 class='typeahead-header'>Park Extents</h4>"
     }
   }, {
     name: "Nature Trail",
@@ -566,7 +566,7 @@ $(document).one("ajaxStop", function () {
       header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
     }
   }).on("typeahead:selected", function (obj, datum) {
-    if (datum.source === "Eco Zones") {
+    if (datum.source === "Park Extents") {
       map.fitBounds(datum.bounds);
     }
     if (datum.source === "Nature Trail") {
