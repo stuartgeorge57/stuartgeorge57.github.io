@@ -24,7 +24,7 @@ $("#about-btn").click(function() {
 });
 
 $("#full-extent-btn").click(function() {
-  map.fitBounds(boundaries.getBounds());
+  map.fitBounds(Park_Extent.getBounds());
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
@@ -141,7 +141,7 @@ var highlightStyle = {
   radius: 20
 };
 
-var boundaries = L.geoJson(null, {
+var Park_Extent = L.geoJson(null, {
   style: function (feature) {
     return {
       color: "#ff3135",
@@ -159,8 +159,8 @@ var boundaries = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/boundaries.geojson", function (data) {
-  boundaries.addData(data);
+$.getJSON("data/Park_Extent.geojson", function (data) {
+  Park_Extent.addData(data);
 });
 
 
@@ -312,7 +312,7 @@ $.getJSON("data/Arboretum.geojson", function (data) {
 map = L.map("map", {
   zoom: 16,
   center: [-36.75250, 174.75665],
-  layers: [Mapbox, boundaries, markerClusters, highlight],
+  layers: [Mapbox, Park_Extent, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
 });
@@ -431,7 +431,7 @@ var groupedOverlays = {
     "<img src='assets/img/tree.png' width='20' height='20'>&nbsp;Arboretum": arboretumLayer
   },
   "Reference": {
-    "Eco Zones": boundaries,
+    "Eco Zones": Park_Extent,
     "Streams": streamLines
   }
 };
@@ -461,7 +461,7 @@ $(document).one("ajaxStop", function () {
   $("#loading").hide();
   sizeLayerControl();
   /* Fit map to boundary bounds 
-  map.fitBounds(boundaries.getBounds());
+  map.fitBounds(Park_Extent.getBounds());
   featureList = new List("features", {valueNames: ["feature-name"]});
   featureList.sort("feature-name", {order:"asc"}); 
 
@@ -525,7 +525,7 @@ $(document).one("ajaxStop", function () {
     },
     limit: 26
   });
-  boundariesBH.initialize();
+  Park_ExtentBH.initialize();
   naturetrailBH.initialize();
   arboretumBH.initialize();
   geonamesBH.initialize();
@@ -538,7 +538,7 @@ $(document).one("ajaxStop", function () {
   }, {
     name: "Eco Zones",
     displayKey: "name",
-    source: boundariesBH.ttAdapter(),
+    source: Park_ExtentBH.ttAdapter(),
     templates: {
       header: "<h4 class='typeahead-header'>Eco Zones</h4>"
     }
